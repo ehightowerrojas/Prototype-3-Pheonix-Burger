@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d3en63npp67s1"]
+
+[ext_resource type="Texture2D" uid="uid://bm5x6fn10vqp7" path="res://assets/New Piskel (2).png" id="1_wtcfe"]
+
+[node name="Game Scene" type="Node2D" unique_id=545342406]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1125816962]
+offset = Vector2(200, 125)
+zoom = Vector2(2.5, 2.5)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=636638810]
+modulate = Color(0, 0, 1, 1)
+z_index = -99
+offset_left = -488.0
+offset_top = -332.0
+offset_right = 1031.0
+offset_bottom = 629.0
+
+[node name="Control" type="Control" parent="." unique_id=215550828]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="Control" unique_id=1376373230]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07762883, 0.07762881, 0.07762881, 1)
+
+[node name="divider" type="ColorRect" parent="Control" unique_id=257536046]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
+
+[node name="NewPiskel(2)" type="Sprite2D" parent="." unique_id=1229557760]
+texture_filter = 1
+position = Vector2(99, 122)
+scale = Vector2(2, 2)
+texture = ExtResource("1_wtcfe")
