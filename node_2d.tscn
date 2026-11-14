@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dr8py8674jhex" path="res://assets/SpaceRight.png" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://ds6ld36ecpilk" path="res://assets/EnemySideShip.png" id="5_q6r6c"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1f1a"]
+size = Vector2(4, 52)
+
 [node name="Game Scene" type="Node2D" unique_id=545342406]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1125816962]
@@ -15,10 +18,10 @@ zoom = Vector2(2.5, 2.5)
 [node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=636638810]
 modulate = Color(0, 0, 1, 1)
 z_index = -99
-offset_left = -305.0
-offset_top = -304.0
-offset_right = 797.0
-offset_bottom = 575.0
+offset_left = -326.0
+offset_top = -296.0
+offset_right = 776.0
+offset_bottom = 583.0
 
 [node name="ShipFrame" type="Sprite2D" parent="Camera2D" unique_id=925128666]
 z_index = 10
@@ -79,3 +82,47 @@ offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 1, 1)
+
+[node name="Ladders" type="Node2D" parent="." unique_id=678674275]
+
+[node name="Ladder1" type="Area2D" parent="Ladders" unique_id=1933317214]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1" unique_id=328025073]
+position = Vector2(12, 218)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder2" type="Area2D" parent="Ladders" unique_id=21512254]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2" unique_id=1373133997]
+position = Vector2(100, 218)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder3" type="Area2D" parent="Ladders" unique_id=242903065]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3" unique_id=93236816]
+position = Vector2(188, 218)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder4" type="Area2D" parent="Ladders" unique_id=593860253]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4" unique_id=545799837]
+position = Vector2(52, 172)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder5" type="Area2D" parent="Ladders" unique_id=2073957331]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5" unique_id=2062624160]
+position = Vector2(148, 172)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder6" type="Area2D" parent="Ladders" unique_id=1428183291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6" unique_id=2019024046]
+position = Vector2(12, 127)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder7" type="Area2D" parent="Ladders" unique_id=856107169]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7" unique_id=51474340]
+position = Vector2(188, 127)
+shape = SubResource("RectangleShape2D_p1f1a")
