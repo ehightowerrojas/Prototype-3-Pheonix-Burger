@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://d3en63npp67s1"]
 
-[ext_resource type="Texture2D" uid="uid://bm5x6fn10vqp7" path="res://assets/New Piskel (2).png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://dfib0leekbmgp" path="res://assets/ShipFrame.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://67fx3co5ubf6" path="res://assets/SpaceLeft.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://b4djbd7wfn5ol" path="res://assets/ShipBackground.png" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dr8py8674jhex" path="res://assets/SpaceRight.png" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://ds6ld36ecpilk" path="res://assets/EnemySideShip.png" id="5_q6r6c"]
 
 [node name="Game Scene" type="Node2D" unique_id=545342406]
 
@@ -11,10 +15,37 @@ zoom = Vector2(2.5, 2.5)
 [node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=636638810]
 modulate = Color(0, 0, 1, 1)
 z_index = -99
-offset_left = -488.0
-offset_top = -332.0
-offset_right = 1031.0
-offset_bottom = 629.0
+offset_left = -305.0
+offset_top = -304.0
+offset_right = 797.0
+offset_bottom = 575.0
+
+[node name="ShipFrame" type="Sprite2D" parent="Camera2D" unique_id=925128666]
+z_index = 10
+position = Vector2(100, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("1_wtcfe")
+
+[node name="SpaceLeft" type="Sprite2D" parent="Camera2D" unique_id=563516384]
+position = Vector2(100, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("2_epypp")
+
+[node name="ShipBackground" type="Sprite2D" parent="Camera2D" unique_id=915248390]
+z_index = 9
+position = Vector2(100, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("3_0hol4")
+
+[node name="SpaceRight" type="Sprite2D" parent="Camera2D" unique_id=1821957166]
+position = Vector2(300, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("4_0hol4")
+
+[node name="EnemySideShip" type="Sprite2D" parent="Camera2D" unique_id=1868399150]
+position = Vector2(300, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("5_q6r6c")
 
 [node name="Control" type="Control" parent="." unique_id=215550828]
 layout_mode = 3
@@ -37,18 +68,14 @@ grow_vertical = 2
 color = Color(0.07762883, 0.07762881, 0.07762881, 1)
 
 [node name="divider" type="ColorRect" parent="Control" unique_id=257536046]
-custom_minimum_size = Vector2(6, 0)
+custom_minimum_size = Vector2(4, 0)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 1, 1)
-
-[node name="NewPiskel(2)" type="Sprite2D" parent="." unique_id=1229557760]
-texture_filter = 1
-position = Vector2(99, 122)
-scale = Vector2(2, 2)
-texture = ExtResource("1_wtcfe")
