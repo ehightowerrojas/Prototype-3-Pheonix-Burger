@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dr8py8674jhex" path="res://assets/SpaceRight.png" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://ds6ld36ecpilk" path="res://assets/EnemySideShip.png" id="5_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://b8g6wa60ojyxw" path="res://assets/chef.png" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://c8b80lc46kyt3" path="res://assets/CannonPillar.png" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://t15ydil0nnkh" path="res://chef.gd" id="7_rj586"]
+[ext_resource type="Texture2D" uid="uid://cr1yxcy584hgm" path="res://assets/CannonHead.png" id="8_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://cn10qtxap5hwj" path="res://assets/smallCannonHead.png" id="9_hqns4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1f1a"]
 size = Vector2(4, 52)
@@ -25,7 +29,7 @@ offset_right = 776.0
 offset_bottom = 583.0
 
 [node name="ShipFrame" type="Sprite2D" parent="Camera2D" unique_id=925128666]
-z_index = 10
+z_index = 11
 position = Vector2(100, 125)
 scale = Vector2(2, 2)
 texture = ExtResource("1_wtcfe")
@@ -131,6 +135,88 @@ shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Chef" type="Sprite2D" parent="." unique_id=989322681]
 z_index = 9
-position = Vector2(100, 146)
+position = Vector2(100, 190)
 scale = Vector2(2, 2)
 texture = ExtResource("6_kdubu")
+script = ExtResource("7_rj586")
+
+[node name="Main Cannons" type="Node2D" parent="." unique_id=30735209]
+
+[node name="CannonHead" type="Sprite2D" parent="Main Cannons" unique_id=1279067425]
+position = Vector2(28, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="CannonHead2" type="Sprite2D" parent="Main Cannons" unique_id=284010776]
+z_index = 10
+position = Vector2(76, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="CannonHead3" type="Sprite2D" parent="Main Cannons" unique_id=1267046270]
+z_index = 10
+position = Vector2(124, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="CannonHead4" type="Sprite2D" parent="Main Cannons" unique_id=1044271956]
+position = Vector2(172, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="SmallCannons" type="Node2D" parent="." unique_id=163448748]
+
+[node name="SmallCannonHead" type="Sprite2D" parent="SmallCannons" unique_id=464671832]
+position = Vector2(272, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="SmallCannonHead2" type="Sprite2D" parent="SmallCannons" unique_id=549693817]
+position = Vector2(290, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="SmallCannonHead3" type="Sprite2D" parent="SmallCannons" unique_id=1083135654]
+position = Vector2(310, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="SmallCannonHead4" type="Sprite2D" parent="SmallCannons" unique_id=2135731109]
+position = Vector2(328, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="CannonPillars" type="Node2D" parent="." unique_id=1733566433]
+position = Vector2(28, 164)
+scale = Vector2(2, 2)
+
+[node name="CannonPillar" type="Sprite2D" parent="CannonPillars" unique_id=1751004995]
+z_index = 9
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
+
+[node name="CannonPillar2" type="Sprite2D" parent="CannonPillars" unique_id=2040975013]
+z_index = 9
+position = Vector2(24, -22.5)
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
+
+[node name="CannonPillar3" type="Sprite2D" parent="CannonPillars" unique_id=229018456]
+z_index = 9
+position = Vector2(48, -22)
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
+
+[node name="CannonPillar4" type="Sprite2D" parent="CannonPillars" unique_id=1509276028]
+z_index = 9
+position = Vector2(72, 0)
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
