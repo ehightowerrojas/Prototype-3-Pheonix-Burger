@@ -220,3 +220,7 @@ texture = ExtResource("7_d21ai")
 hframes = 5
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 90)
+
+[node name="test" type="ColorRect" parent="." unique_id=1489122525]
+offset_right = 40.0
+offset_bottom = 40.0
