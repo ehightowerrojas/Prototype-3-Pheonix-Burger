@@ -1,0 +1,249 @@
+[gd_scene format=3 uid="uid://d3en63npp67s1"]
+
+[ext_resource type="Texture2D" uid="uid://dfib0leekbmgp" path="res://assets/ShipFrame.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://67fx3co5ubf6" path="res://assets/SpaceLeft.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://b4djbd7wfn5ol" path="res://assets/ShipBackground.png" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dr8py8674jhex" path="res://assets/SpaceRight.png" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://ds6ld36ecpilk" path="res://assets/EnemySideShip.png" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://xmljw82kh8fw" path="res://scripts/ladder.gd" id="6_hqns4"]
+[ext_resource type="Texture2D" uid="uid://b8g6wa60ojyxw" path="res://assets/chef.png" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://c8b80lc46kyt3" path="res://assets/CannonPillar.png" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://d2akumwbk33ip" path="res://scripts/player.gd" id="7_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://cr1yxcy584hgm" path="res://assets/CannonHead.png" id="8_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://cn10qtxap5hwj" path="res://assets/smallCannonHead.png" id="9_hqns4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1f1a"]
+size = Vector2(12, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlr0d"]
+size = Vector2(12, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yt8ht"]
+size = Vector2(187, 6)
+
+[node name="Game Scene" type="Node2D" unique_id=545342406]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1125816962]
+offset = Vector2(200, 125)
+zoom = Vector2(2.5, 2.5)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=636638810]
+modulate = Color(0, 0, 1, 1)
+z_index = -99
+offset_left = -326.0
+offset_top = -296.0
+offset_right = 776.0
+offset_bottom = 583.0
+
+[node name="ShipFrame" type="Sprite2D" parent="Camera2D" unique_id=925128666]
+z_index = 11
+position = Vector2(100, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("1_wtcfe")
+
+[node name="SpaceLeft" type="Sprite2D" parent="Camera2D" unique_id=563516384]
+position = Vector2(100, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("2_epypp")
+
+[node name="ShipBackground" type="Sprite2D" parent="Camera2D" unique_id=915248390]
+z_index = 9
+position = Vector2(100, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("3_0hol4")
+
+[node name="SpaceRight" type="Sprite2D" parent="Camera2D" unique_id=1821957166]
+position = Vector2(300, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("4_0hol4")
+
+[node name="EnemySideShip" type="Sprite2D" parent="Camera2D" unique_id=1868399150]
+position = Vector2(300, 125)
+scale = Vector2(2, 2)
+texture = ExtResource("5_q6r6c")
+
+[node name="Control" type="Control" parent="." unique_id=215550828]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="Control" unique_id=1376373230]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07762883, 0.07762881, 0.07762881, 1)
+
+[node name="divider" type="ColorRect" parent="Control" unique_id=257536046]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
+
+[node name="Ladders" type="Node2D" parent="." unique_id=678674275]
+
+[node name="Ladder1" type="Area2D" parent="Ladders" unique_id=1933317214]
+script = ExtResource("6_hqns4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1" unique_id=328025073]
+position = Vector2(12, 219)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder2" type="Area2D" parent="Ladders" unique_id=21512254]
+script = ExtResource("6_hqns4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2" unique_id=1373133997]
+position = Vector2(100, 219)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder3" type="Area2D" parent="Ladders" unique_id=242903065]
+script = ExtResource("6_hqns4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3" unique_id=93236816]
+position = Vector2(188, 219)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder4" type="Area2D" parent="Ladders" unique_id=593860253]
+script = ExtResource("6_hqns4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4" unique_id=545799837]
+position = Vector2(52, 175)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder5" type="Area2D" parent="Ladders" unique_id=2073957331]
+script = ExtResource("6_hqns4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5" unique_id=2062624160]
+position = Vector2(148, 175)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder6" type="Area2D" parent="Ladders" unique_id=1428183291]
+script = ExtResource("6_hqns4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6" unique_id=2019024046]
+position = Vector2(12, 131)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Ladder7" type="Area2D" parent="Ladders" unique_id=856107169]
+script = ExtResource("6_hqns4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7" unique_id=51474340]
+position = Vector2(188, 131)
+shape = SubResource("RectangleShape2D_p1f1a")
+
+[node name="Main Cannons" type="Node2D" parent="." unique_id=30735209]
+
+[node name="CannonHead" type="Sprite2D" parent="Main Cannons" unique_id=1279067425]
+position = Vector2(28, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="CannonHead2" type="Sprite2D" parent="Main Cannons" unique_id=284010776]
+z_index = 10
+position = Vector2(76, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="CannonHead3" type="Sprite2D" parent="Main Cannons" unique_id=1267046270]
+z_index = 10
+position = Vector2(124, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="CannonHead4" type="Sprite2D" parent="Main Cannons" unique_id=1044271956]
+position = Vector2(172, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ir8iy")
+
+[node name="SmallCannons" type="Node2D" parent="." unique_id=163448748]
+
+[node name="SmallCannonHead" type="Sprite2D" parent="SmallCannons" unique_id=464671832]
+position = Vector2(272, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="SmallCannonHead2" type="Sprite2D" parent="SmallCannons" unique_id=549693817]
+position = Vector2(290, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="SmallCannonHead3" type="Sprite2D" parent="SmallCannons" unique_id=1083135654]
+position = Vector2(310, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="SmallCannonHead4" type="Sprite2D" parent="SmallCannons" unique_id=2135731109]
+position = Vector2(328, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hqns4")
+
+[node name="CannonPillars" type="Node2D" parent="." unique_id=1733566433]
+position = Vector2(28, 164)
+scale = Vector2(2, 2)
+
+[node name="CannonPillar" type="Sprite2D" parent="CannonPillars" unique_id=1751004995]
+z_index = 9
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
+
+[node name="CannonPillar2" type="Sprite2D" parent="CannonPillars" unique_id=2040975013]
+z_index = 9
+position = Vector2(24, -22.5)
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
+
+[node name="CannonPillar3" type="Sprite2D" parent="CannonPillars" unique_id=229018456]
+z_index = 9
+position = Vector2(48, -22)
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
+
+[node name="CannonPillar4" type="Sprite2D" parent="CannonPillars" unique_id=1509276028]
+z_index = 9
+position = Vector2(72, 0)
+texture = ExtResource("7_d21ai")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 90)
+
+[node name="Chef Player" type="CharacterBody2D" parent="." unique_id=1942207854]
+position = Vector2(100, 190)
+script = ExtResource("7_ir8iy")
+
+[node name="Chef" type="Sprite2D" parent="Chef Player" unique_id=989322681]
+z_index = 11
+scale = Vector2(2, 2)
+texture = ExtResource("6_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chef Player" unique_id=1246441512]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_rlr0d")
+
+[node name="Floor1" type="StaticBody2D" parent="." unique_id=1593992514]
+position = Vector2(0, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1" unique_id=78046422]
+position = Vector2(99.5, 121)
+shape = SubResource("RectangleShape2D_yt8ht")
+one_way_collision = true
