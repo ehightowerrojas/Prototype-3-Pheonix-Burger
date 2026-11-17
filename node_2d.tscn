@@ -19,7 +19,10 @@ size = Vector2(12, 50)
 size = Vector2(12, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yt8ht"]
-size = Vector2(187, 6)
+size = Vector2(188, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj6lw"]
+size = Vector2(6, 244)
 
 [node name="Game Scene" type="Node2D" unique_id=545342406]
 
@@ -99,6 +102,7 @@ color = Color(0, 0, 1, 1)
 
 [node name="Ladder1" type="Area2D" parent="Ladders" unique_id=1933317214]
 script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1" unique_id=328025073]
 position = Vector2(12, 219)
@@ -106,6 +110,7 @@ shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder2" type="Area2D" parent="Ladders" unique_id=21512254]
 script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2" unique_id=1373133997]
 position = Vector2(100, 219)
@@ -113,6 +118,7 @@ shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder3" type="Area2D" parent="Ladders" unique_id=242903065]
 script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3" unique_id=93236816]
 position = Vector2(188, 219)
@@ -120,6 +126,7 @@ shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder4" type="Area2D" parent="Ladders" unique_id=593860253]
 script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4" unique_id=545799837]
 position = Vector2(52, 175)
@@ -127,6 +134,7 @@ shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder5" type="Area2D" parent="Ladders" unique_id=2073957331]
 script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5" unique_id=2062624160]
 position = Vector2(148, 175)
@@ -134,6 +142,7 @@ shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder6" type="Area2D" parent="Ladders" unique_id=1428183291]
 script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6" unique_id=2019024046]
 position = Vector2(12, 131)
@@ -141,6 +150,7 @@ shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder7" type="Area2D" parent="Ladders" unique_id=856107169]
 script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7" unique_id=51474340]
 position = Vector2(188, 131)
@@ -240,10 +250,31 @@ texture = ExtResource("6_kdubu")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_rlr0d")
 
-[node name="Floor1" type="StaticBody2D" parent="." unique_id=1593992514]
+[node name="Floors" type="StaticBody2D" parent="." unique_id=1593992514]
 position = Vector2(0, 82)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1" unique_id=78046422]
-position = Vector2(99.5, 121)
+[node name="Floor1" type="CollisionShape2D" parent="Floors" unique_id=1826791037]
+position = Vector2(100, 165)
 shape = SubResource("RectangleShape2D_yt8ht")
-one_way_collision = true
+
+[node name="Floor2" type="CollisionShape2D" parent="Floors" unique_id=78046422]
+position = Vector2(100, 121)
+shape = SubResource("RectangleShape2D_yt8ht")
+
+[node name="Floor3" type="CollisionShape2D" parent="Floors" unique_id=531969985]
+position = Vector2(100, 77)
+shape = SubResource("RectangleShape2D_yt8ht")
+
+[node name="Floor4" type="CollisionShape2D" parent="Floors" unique_id=460593967]
+position = Vector2(100, 33)
+shape = SubResource("RectangleShape2D_yt8ht")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1641956616]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=423496211]
+position = Vector2(197, 122)
+shape = SubResource("RectangleShape2D_sj6lw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1437132659]
+position = Vector2(3, 122)
+shape = SubResource("RectangleShape2D_sj6lw")

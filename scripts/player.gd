@@ -15,8 +15,8 @@ extends CharacterBody2D
 @export var maxFallSpeed := 650.0
 
 @export_group("Input")
-@export var leftAction: StringName = &"ui_left"
-@export var rightAction: StringName = &"ui_right"
+@export var leftAction: StringName = &"MoveLeft"
+@export var rightAction: StringName = &"MoveRight"
 @export var interactAction: StringName = &"interact"
 
 var currentLadder: Ladder = null
