@@ -5,14 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://b4djbd7wfn5ol" path="res://assets/ShipBackground.png" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dr8py8674jhex" path="res://assets/SpaceRight.png" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://ds6ld36ecpilk" path="res://assets/EnemySideShip.png" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://xmljw82kh8fw" path="res://scripts/ladder.gd" id="6_hqns4"]
 [ext_resource type="Texture2D" uid="uid://b8g6wa60ojyxw" path="res://assets/chef.png" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://c8b80lc46kyt3" path="res://assets/CannonPillar.png" id="7_d21ai"]
-[ext_resource type="Script" uid="uid://t15ydil0nnkh" path="res://chef.gd" id="7_rj586"]
+[ext_resource type="Script" uid="uid://d2akumwbk33ip" path="res://scripts/player.gd" id="7_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://cr1yxcy584hgm" path="res://assets/CannonHead.png" id="8_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://cn10qtxap5hwj" path="res://assets/smallCannonHead.png" id="9_hqns4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1f1a"]
-size = Vector2(4, 52)
+size = Vector2(12, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlr0d"]
+size = Vector2(12, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yt8ht"]
+size = Vector2(188, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj6lw"]
+size = Vector2(6, 244)
 
 [node name="Game Scene" type="Node2D" unique_id=545342406]
 
@@ -91,54 +101,60 @@ color = Color(0, 0, 1, 1)
 [node name="Ladders" type="Node2D" parent="." unique_id=678674275]
 
 [node name="Ladder1" type="Area2D" parent="Ladders" unique_id=1933317214]
-visible = false
+script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1" unique_id=328025073]
-position = Vector2(12, 218)
+position = Vector2(12, 219)
 shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder2" type="Area2D" parent="Ladders" unique_id=21512254]
+script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2" unique_id=1373133997]
-position = Vector2(100, 218)
+position = Vector2(100, 219)
 shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder3" type="Area2D" parent="Ladders" unique_id=242903065]
+script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3" unique_id=93236816]
-position = Vector2(188, 218)
+position = Vector2(188, 219)
 shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder4" type="Area2D" parent="Ladders" unique_id=593860253]
+script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4" unique_id=545799837]
-position = Vector2(52, 172)
+position = Vector2(52, 175)
 shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder5" type="Area2D" parent="Ladders" unique_id=2073957331]
+script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5" unique_id=2062624160]
-position = Vector2(148, 172)
+position = Vector2(148, 175)
 shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder6" type="Area2D" parent="Ladders" unique_id=1428183291]
+script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder6" unique_id=2019024046]
-position = Vector2(12, 127)
+position = Vector2(12, 131)
 shape = SubResource("RectangleShape2D_p1f1a")
 
 [node name="Ladder7" type="Area2D" parent="Ladders" unique_id=856107169]
+script = ExtResource("6_hqns4")
+climbHeight = 55.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder7" unique_id=51474340]
-position = Vector2(188, 127)
+position = Vector2(188, 131)
 shape = SubResource("RectangleShape2D_p1f1a")
-
-[node name="Chef" type="Sprite2D" parent="." unique_id=989322681]
-z_index = 9
-position = Vector2(100, 190)
-scale = Vector2(2, 2)
-texture = ExtResource("6_kdubu")
-script = ExtResource("7_rj586")
 
 [node name="Main Cannons" type="Node2D" parent="." unique_id=30735209]
 
@@ -221,6 +237,44 @@ hframes = 5
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 90)
 
-[node name="test" type="ColorRect" parent="." unique_id=1489122525]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Chef Player" type="CharacterBody2D" parent="." unique_id=1942207854]
+position = Vector2(100, 190)
+script = ExtResource("7_ir8iy")
+
+[node name="Chef" type="Sprite2D" parent="Chef Player" unique_id=989322681]
+z_index = 11
+scale = Vector2(2, 2)
+texture = ExtResource("6_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chef Player" unique_id=1246441512]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_rlr0d")
+
+[node name="Floors" type="StaticBody2D" parent="." unique_id=1593992514]
+position = Vector2(0, 82)
+
+[node name="Floor1" type="CollisionShape2D" parent="Floors" unique_id=1826791037]
+position = Vector2(100, 165)
+shape = SubResource("RectangleShape2D_yt8ht")
+
+[node name="Floor2" type="CollisionShape2D" parent="Floors" unique_id=78046422]
+position = Vector2(100, 121)
+shape = SubResource("RectangleShape2D_yt8ht")
+
+[node name="Floor3" type="CollisionShape2D" parent="Floors" unique_id=531969985]
+position = Vector2(100, 77)
+shape = SubResource("RectangleShape2D_yt8ht")
+
+[node name="Floor4" type="CollisionShape2D" parent="Floors" unique_id=460593967]
+position = Vector2(100, 33)
+shape = SubResource("RectangleShape2D_yt8ht")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1641956616]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=423496211]
+position = Vector2(197, 122)
+shape = SubResource("RectangleShape2D_sj6lw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1437132659]
+position = Vector2(3, 122)
+shape = SubResource("RectangleShape2D_sj6lw")
