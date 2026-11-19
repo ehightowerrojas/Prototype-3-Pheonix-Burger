@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b7saqonbjybyi" path="res://scripts/cannon_head.gd" id="8_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://cn10qtxap5hwj" path="res://assets/smallCannonHead.png" id="9_hqns4"]
 [ext_resource type="Script" uid="uid://442may20gbo4" path="res://scripts/small_cannon_head.gd" id="10_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://cjlc3liern4sy" path="res://assets/enemyCannon.png" id="11_d2bti"]
 [ext_resource type="Texture2D" uid="uid://8cyesybn0nsb" path="res://assets/controls.png" id="14_nr8wp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1f1a"]
@@ -235,6 +236,26 @@ position = Vector2(328, 202)
 scale = Vector2(2, 2)
 texture = ExtResource("9_hqns4")
 script = ExtResource("10_0h7mo")
+
+[node name="EnemyCannon" type="Sprite2D" parent="SmallCannons" unique_id=1993857214]
+position = Vector2(272, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("11_d2bti")
+
+[node name="EnemyCannon2" type="Sprite2D" parent="SmallCannons" unique_id=1088148426]
+position = Vector2(290, 49)
+scale = Vector2(2, 2)
+texture = ExtResource("11_d2bti")
+
+[node name="EnemyCannon3" type="Sprite2D" parent="SmallCannons" unique_id=2007873387]
+position = Vector2(310, 49)
+scale = Vector2(2, 2)
+texture = ExtResource("11_d2bti")
+
+[node name="EnemyCannon4" type="Sprite2D" parent="SmallCannons" unique_id=479958971]
+position = Vector2(328, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("11_d2bti")
 
 [node name="CannonPillars" type="Node2D" parent="." unique_id=1733566433]
 position = Vector2(28, 164)
