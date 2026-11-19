@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dk5ol6yvqctd1"]
+
+[ext_resource type="Texture2D" uid="uid://dmxwbf4xk6mif" path="res://assets/BigBolt.png" id="1_go7vd"]
+[ext_resource type="Script" uid="uid://d2710i8rsb2vf" path="res://scripts/big_bolt.gd" id="2_v7rpv"]
+
+[node name="Node2D" type="Node2D" unique_id=370327047]
+
+[node name="BigBolt" type="Sprite2D" parent="." unique_id=201350925]
+texture = ExtResource("1_go7vd")
+script = ExtResource("2_v7rpv")

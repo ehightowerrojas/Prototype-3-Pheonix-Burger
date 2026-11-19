@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cksopdavsy01i"]
+
+[ext_resource type="Texture2D" uid="uid://bqnk82sryx136" path="res://assets/SmallBolt.png" id="1_0w0c3"]
+[ext_resource type="Script" uid="uid://cca66bb5jh0q8" path="res://scripts/small_bolt.gd" id="2_xx0au"]
+
+[node name="Node2D" type="Node2D" unique_id=1569743900]
+
+[node name="SmallBolt" type="Sprite2D" parent="." unique_id=816996644]
+texture = ExtResource("1_0w0c3")
+script = ExtResource("2_xx0au")
