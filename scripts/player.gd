@@ -27,7 +27,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if currentLadder != null and Input.is_action_just_pressed(interactAction):
+	if currentLadder != null and Input.is_action_just_pressed("Climb"):
 		climb(currentLadder)
 
 	var direction := Input.get_axis(leftAction, rightAction)
