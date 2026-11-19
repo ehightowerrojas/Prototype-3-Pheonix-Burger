@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cn10qtxap5hwj" path="res://assets/smallCannonHead.png" id="9_hqns4"]
 [ext_resource type="Script" uid="uid://442may20gbo4" path="res://scripts/small_cannon_head.gd" id="10_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://cjlc3liern4sy" path="res://assets/enemyCannon.png" id="11_d2bti"]
+[ext_resource type="Script" uid="uid://b1xekb28p4roi" path="res://scripts/cannon_pillar.gd" id="13_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://8cyesybn0nsb" path="res://assets/controls.png" id="14_nr8wp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1f1a"]
@@ -267,6 +268,7 @@ texture = ExtResource("7_d21ai")
 hframes = 5
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 90)
+script = ExtResource("13_ta5nu")
 
 [node name="CannonPillar2" type="Sprite2D" parent="CannonPillars" unique_id=2040975013]
 z_index = 9
@@ -275,6 +277,8 @@ texture = ExtResource("7_d21ai")
 hframes = 5
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 90)
+script = ExtResource("13_ta5nu")
+starting_stage = 1
 
 [node name="CannonPillar3" type="Sprite2D" parent="CannonPillars" unique_id=229018456]
 z_index = 9
@@ -283,6 +287,8 @@ texture = ExtResource("7_d21ai")
 hframes = 5
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 90)
+script = ExtResource("13_ta5nu")
+starting_stage = 1
 
 [node name="CannonPillar4" type="Sprite2D" parent="CannonPillars" unique_id=1509276028]
 z_index = 9
@@ -291,6 +297,7 @@ texture = ExtResource("7_d21ai")
 hframes = 5
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 90)
+script = ExtResource("13_ta5nu")
 
 [node name="Chef Player" type="CharacterBody2D" parent="." unique_id=1942207854]
 position = Vector2(100, 190)

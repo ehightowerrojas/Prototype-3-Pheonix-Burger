@@ -31,11 +31,17 @@ func _physics_process(delta: float) -> void:
 		climb(currentLadder)
 
 	var direction := Input.get_axis(leftAction, rightAction)
+	flipSprite(direction)
 	applyGravity(delta)
 	applyHorizontal(direction, delta)
 
 	move_and_slide()
 
+func flipSprite(direction: float) -> void:
+	if direction < 0:
+		$Chef.flip_h = true
+	elif direction > 0:
+		$Chef.flip_h = false
 
 # Called by Ladder when the player starts or stops touching it.
 func enterLadder(ladder: Ladder) -> void:
