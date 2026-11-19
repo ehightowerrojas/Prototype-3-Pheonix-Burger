@@ -350,3 +350,7 @@ texture = ExtResource("14_nr8wp")
 [connection signal="fired" from="Main Cannons/CannonHead2" to="SmallCannons/SmallCannonHead2" method="_on_cannon_head_fired"]
 [connection signal="fired" from="Main Cannons/CannonHead3" to="SmallCannons/SmallCannonHead3" method="_on_cannon_head_fired"]
 [connection signal="fired" from="Main Cannons/CannonHead4" to="SmallCannons/SmallCannonHead4" method="_on_cannon_head_fired"]
+[connection signal="fullyLoaded" from="CannonPillars/CannonPillar" to="Main Cannons/CannonHead" method="_on_cannon_pillar_fully_loaded"]
+[connection signal="fullyLoaded" from="CannonPillars/CannonPillar2" to="Main Cannons/CannonHead2" method="_on_cannon_pillar_fully_loaded"]
+[connection signal="fullyLoaded" from="CannonPillars/CannonPillar3" to="Main Cannons/CannonHead3" method="_on_cannon_pillar_fully_loaded"]
+[connection signal="fullyLoaded" from="CannonPillars/CannonPillar4" to="Main Cannons/CannonHead4" method="_on_cannon_pillar_fully_loaded"]

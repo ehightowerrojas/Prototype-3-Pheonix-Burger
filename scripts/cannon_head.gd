@@ -7,7 +7,7 @@ const RESETSPEED: int = 1;
 const STARTINGPOS: float = 36.0;
 const SHOOTMARGIN: float = 50.0;
 const BIGBOLT = preload("res://BigBolt.tscn")
-signal fired(cannonFata)
+signal fired(cannonData)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,3 +36,13 @@ func spawn_BigShot() -> void:
 	instance.z_as_relative = false
 	instance.z_index = 8;
 	add_child(instance)
+	
+
+
+func _on_cannon_pillar_fully_loaded() -> void:
+	print("fire from loading")
+	if (!firingCannon && position.y <= STARTINGPOS):
+		spawn_BigShot()
+		fired.emit()
+		if (cooldown <= 0 && !firingCannon):
+			firingCannon = true;

@@ -5,6 +5,7 @@ var current_stage = 0
 var max_stages= 4
 var move_amount = 22
 var is_moving = false
+signal fullyLoaded(cannonData)
 
 
 
@@ -19,6 +20,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("DemoReload"):
 		if current_stage < max_stages and not is_moving:
 			move_pillar()
+		elif (current_stage == max_stages and not is_moving):
+			reset_pillar()
 			
 func move_pillar():
 	is_moving = true
@@ -29,4 +32,16 @@ func move_pillar():
 	
 	await tween.finished
 	frame = current_stage
+	is_moving = false
+	
+func reset_pillar():
+	fullyLoaded.emit()
+	is_moving = true
+	
+	while (current_stage > starting_stage):
+		current_stage -= 1
+		frame = current_stage
+		var tween = create_tween()
+		tween.tween_property(self, "position:y", position.y + move_amount, move_speed/2)
+		await tween.finished
 	is_moving = false
