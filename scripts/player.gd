@@ -4,7 +4,7 @@ extends CharacterBody2D
 ## Attach to a CharacterBody2D that has a CollisionShape2D child.
 
 @export_group("Run")
-@export var maxSpeed := 220.0          ## px/s
+@export var maxSpeed := 70.0          ## px/s
 @export var groundAcceleration := 1800.0
 @export var groundFriction := 2200.0
 @export var airAcceleration := 1100.0
