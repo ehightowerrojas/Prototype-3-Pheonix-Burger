@@ -4,7 +4,7 @@ var cooldown: int = 0;
 var firingCannon: bool = false;
 const FIRESPEED: int = 10;
 const RESETSPEED: int = 1;
-const STARTINGPOS: float = 35.0;
+const STARTINGPOS: float = 36.0;
 const SHOOTMARGIN: float = 50.0;
 
 # Called when the node enters the scene tree for the first time.

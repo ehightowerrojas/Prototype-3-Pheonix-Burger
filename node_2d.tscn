@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c8b80lc46kyt3" path="res://assets/CannonPillar.png" id="7_d21ai"]
 [ext_resource type="Script" uid="uid://d2akumwbk33ip" path="res://scripts/player.gd" id="7_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://cr1yxcy584hgm" path="res://assets/CannonHead.png" id="8_ir8iy"]
-[ext_resource type="Script" uid="uid://b7saqonbjybyi" path="res://cannon_head.gd" id="8_x0ka3"]
+[ext_resource type="Script" uid="uid://b7saqonbjybyi" path="res://scripts/cannon_head.gd" id="8_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://cn10qtxap5hwj" path="res://assets/smallCannonHead.png" id="9_hqns4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1f1a"]
@@ -160,27 +160,30 @@ shape = SubResource("RectangleShape2D_p1f1a")
 [node name="Main Cannons" type="Node2D" parent="." unique_id=30735209]
 
 [node name="CannonHead" type="Sprite2D" parent="Main Cannons" unique_id=1279067425]
-position = Vector2(28, 35)
+position = Vector2(28, 36)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ir8iy")
 script = ExtResource("8_x0ka3")
 
 [node name="CannonHead2" type="Sprite2D" parent="Main Cannons" unique_id=284010776]
 z_index = 10
-position = Vector2(76, 35)
+position = Vector2(76, 36)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ir8iy")
+script = ExtResource("8_x0ka3")
 
 [node name="CannonHead3" type="Sprite2D" parent="Main Cannons" unique_id=1267046270]
 z_index = 10
-position = Vector2(124, 35)
+position = Vector2(124, 36)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ir8iy")
+script = ExtResource("8_x0ka3")
 
 [node name="CannonHead4" type="Sprite2D" parent="Main Cannons" unique_id=1044271956]
-position = Vector2(172, 35)
+position = Vector2(172, 36)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ir8iy")
+script = ExtResource("8_x0ka3")
 
 [node name="SmallCannons" type="Node2D" parent="." unique_id=163448748]
 
@@ -217,7 +220,7 @@ region_rect = Rect2(0, 0, 50, 90)
 
 [node name="CannonPillar2" type="Sprite2D" parent="CannonPillars" unique_id=2040975013]
 z_index = 9
-position = Vector2(24, -22.5)
+position = Vector2(24, -22)
 texture = ExtResource("7_d21ai")
 hframes = 5
 region_enabled = true
